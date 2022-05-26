@@ -7,7 +7,9 @@ class Dni
 
     public function __construct(private string $value)
     {
-        throw new LengthException();
+        if (strlen($this->value) > 9) {
+            throw new LengthException();
+        }
     }
 
 
