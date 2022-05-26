@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class DNITest extends TestCase
 {
-    public function test() {
-        $this->assertTrue(true);
+    public function testLenghtShouldBeNine() {
+        $dni = new \DNI()
     }
 }
