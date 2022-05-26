@@ -17,4 +17,9 @@ class DniTest extends TestCase
         $dni = new Dni('123456789');
         $this->assertInstanceOf(Dni::class, $dni);
     }
+
+    public function testShouldNotFailWhenDniLessThanMinLength() {
+        $this->expectException(LengthException::class);
+        $dni = new Dni('12345678');
+    }
 }
