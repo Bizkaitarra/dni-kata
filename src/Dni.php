@@ -7,6 +7,7 @@ class Dni
 
     public function __construct(private string $value)
     {
+        throw new LengthException();
     }
 
 
