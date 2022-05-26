@@ -3,7 +3,7 @@
 namespace App\Tests;
 
 use App\Dni;
-use App\LengthException;
+use LengthException;
 use PHPUnit\Framework\TestCase;
 
 class DniTest extends TestCase
@@ -21,5 +21,11 @@ class DniTest extends TestCase
     public function testShouldNotFailWhenDniLessThanMinLength() {
         $this->expectException(LengthException::class);
         $dni = new Dni('12345678');
+    }
+
+    public function testFirstEightCharsShouldBeNumeric() {
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('First 8 characters should be numeric');
+        $dni = new Dni('1234A6789');
     }
 }
