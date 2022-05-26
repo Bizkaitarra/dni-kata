@@ -2,11 +2,14 @@
 
 namespace App\Tests;
 
+use App\Dni;
+use App\LengthException;
 use PHPUnit\Framework\TestCase;
 
-class DNITest extends TestCase
+class DniTest extends TestCase
 {
-    public function testLenghtShouldBeNine() {
-        $dni = new \DNI()
+    public function testShouldFailWhenDniLongerThanMaxLength() {
+        $this->expectException(LengthException::class);
+        $dni = new Dni('1234567890');
     }
 }
