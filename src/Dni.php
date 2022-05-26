@@ -10,6 +10,9 @@ class Dni
         if (strlen($this->value) > 9) {
             throw new LengthException();
         }
+        if (strlen($this->value) < 9) {
+            throw new LengthException();
+        }
     }
 
 
